@@ -1,0 +1,19 @@
+@model IEnumerable<LeTienDat_241230697.Models.HangHoa>
+@{
+    ViewData["Title"] = "Danh sách hàng hóa";
+}
+<div class="content_top">
+    <div class="heading"><h3 id="product-heading">LE TIEN DAT</h3></div>
+    <div class="see"><p><a asp-action="Create">Thêm hàng hóa mới</a></p></div>
+    <div class="clear"></div>
+</div>
+@if (TempData["Success"] is string message)
+{
+    <p class="success-message">@message</p>
+}
+<div id="product-list">
+    <partial name="_ProductList" model="Model" />
+</div>
+@section Scripts {
+    <script src="~/js/catalog.js" asp-append-version="true"></script>
+}

@@ -1,0 +1,30 @@
+@using Microsoft.AspNetCore.Mvc.Rendering
+@model LeTienDat_241230697.ViewModels.HangHoaCreateViewModel
+@{
+    ViewData["Title"] = "Thêm hàng hóa mới";
+}
+<div class="content_top"><div class="heading"><h3>Thêm hàng hóa mới</h3></div><div class="clear"></div></div>
+<form asp-action="Create" method="post" enctype="multipart/form-data" class="create-form">
+    <div asp-validation-summary="ModelOnly" class="validation-summary"></div>
+    <label asp-for="MaLoai"></label>
+    <select asp-for="MaLoai" asp-items="ViewBag.LoaiHangSelect"><option value="">-- Chọn loại hàng --</option></select>
+    <span asp-validation-for="MaLoai" class="field-error"></span>
+
+    <label asp-for="TenHang"></label>
+    <input asp-for="TenHang" />
+    <span asp-validation-for="TenHang" class="field-error"></span>
+
+    <label asp-for="Gia"></label>
+    <input asp-for="Gia" type="number" min="100" max="5000" step="1" />
+    <span asp-validation-for="Gia" class="field-error"></span>
+
+    <label asp-for="Anh"></label>
+    <input asp-for="Anh" type="file" accept=".jpg,.png,.gif,.tiff" />
+    <span asp-validation-for="Anh" class="field-error"></span>
+
+    <button type="submit">Create</button>
+</form>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+

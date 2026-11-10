@@ -1,0 +1,28 @@
+@using Microsoft.AspNetCore.Mvc.Rendering
+@{
+    var loaiHangs = ViewBag.LoaiHangs as IEnumerable<LeTienDat_241230697.Models.LoaiHang> ?? Enumerable.Empty<LeTienDat_241230697.Models.LoaiHang>();
+}
+<div class="wrap">
+    <div class="header">
+        <div class="header_top">
+            <div class="logo"><a asp-controller="Home" asp-action="Index"><img src="~/images/logo.png" alt="Le Tien Dat" /></a></div>
+            <div class="cart"><p>Welcome to our Online Store! <span>Cart:</span> 0 item(s) - $0.00</p></div>
+            <div class="clear"></div>
+        </div>
+        <div class="header_bottom">
+            <div class="menu">
+                <ul>
+                    <li class="active"><a asp-controller="Home" asp-action="Index">LE TIEN DAT</a></li>
+                    @foreach (var loai in loaiHangs)
+                    {
+                        <li><a href="@Url.Action("FilterByLoai", "Home", new { maLoai = loai.MaLoai })" class="category-filter" data-category="@loai.MaLoai">@loai.TenLoai</a></li>
+                    }
+                    <li><a asp-controller="Home" asp-action="Create">Thêm hàng</a></li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+            <div class="search_box"><form><input type="text" value="Search" /><input type="button" value="" /></form></div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+.create-form { max-width: 520px; padding: 18px 0 35px; }
+.create-form label { display:block; margin:12px 0 5px; font-weight:bold; }
+.create-form input, .create-form select { display:block; box-sizing:border-box; width:100%; max-width:420px; min-height:34px; padding:6px; }
+.create-form button { margin-top:16px; padding:8px 18px; border:0; background:#c42026; color:#fff; cursor:pointer; }
+.field-error, .validation-summary { display:block; color:#b00020; margin-top:4px; }
+.success-message { padding:10px; background:#e7f4e4; color:#245c21; }
